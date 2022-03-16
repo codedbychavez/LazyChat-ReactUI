@@ -1,2 +1,2 @@
 # LazyChat-ReactUI
-An updated UI for 
+An updated UI for LazyChat
