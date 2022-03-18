@@ -7,7 +7,7 @@ const ChatBubble = (props) => {
   const index = props.index;
   if(index % 2 !== 0) {
     return (
-        <ChatBubbleWrapper>{message}</ChatBubbleWrapper>
+        <UserChatBubbleWrapper>{message}</UserChatBubbleWrapper>
     )
   }
   return (
@@ -15,7 +15,7 @@ const ChatBubble = (props) => {
   )
 }
 
-const ChatBubbleWrapper = styled(Card)`
+const UserChatBubbleWrapper = styled(Card)`
     background-color: #E9E7E7;
     padding: 5px 15px 5px 15px;
     border: 0px;
@@ -24,6 +24,7 @@ const ChatBubbleWrapper = styled(Card)`
     margin-bottom: 1rem;
     font-size: 16px;
     font-weight: 300;
+    width: fit-content;
 `
 
 const AgentChatBubbleWrapper = styled(Card)`
@@ -35,6 +36,8 @@ const AgentChatBubbleWrapper = styled(Card)`
     margin-bottom: 1rem;
     font-size: 16px;
     font-weight: 300;
+    width: fit-content;
+    align-self: flex-end;
 `
 
 export default ChatBubble

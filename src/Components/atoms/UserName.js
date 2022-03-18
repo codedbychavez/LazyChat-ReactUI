@@ -8,7 +8,7 @@ const UserName = () => {
 }
 
 const StyledDiv = styled.div`
-    
+    font-weight: bold;
 `
 
 export default UserName
