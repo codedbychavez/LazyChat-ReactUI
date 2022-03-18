@@ -1,10 +1,23 @@
 import { Card } from "react-bootstrap";
-import styled from "styled-components"
+import styled from "styled-components";
+import ChatBubble from "../atoms/ChatBubble";
 
-const ChatContentArea = () => {
+const ChatContentArea = ({messages}) => {
     return (
         <ChatContentAreaWrapper>
-            <div>Chat content area</div>
+            {
+                messages.length > 0 ?
+
+                messages.map((message, messageIndex) => {
+                    return (
+                        <ChatBubble index={messageIndex} key={messageIndex} message={message}/>
+                    )
+                }) 
+                
+                : 
+                <div>Send a message to Andy.</div>
+
+            }
         </ChatContentAreaWrapper>
     )
 }
@@ -17,6 +30,16 @@ const ChatContentAreaWrapper = styled(Card)`
     border: 0px;
     border-radius: 0px;
     padding: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    ::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    /* Optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: #FF0000;
 `
 
 export default ChatContentArea;
